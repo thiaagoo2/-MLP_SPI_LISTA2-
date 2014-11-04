@@ -1,0 +1,49 @@
+import javax.swing.JOptionPane;
+
+public class Jogo{
+
+	public static void main(String[] args) {
+
+		int count = 0;
+		
+		int Sorteio = 1 + (int) Math.ceil(Math.random() * 50);
+		
+		String resposta = null;
+		
+		while (true) {	
+			resposta = (String) JOptionPane.showInputDialog("Digite um número!");
+			if (resposta == null) {
+		
+				JOptionPane.showMessageDialog(null,"Game Over!\nVo~e perdeu o jogo!");
+				break;
+			}
+			
+			 if (Integer.valueOf(resposta) % 2 == 0){
+								
+				 JOptionPane.showMessageDialog(null,"Ops!\nDigite apenas números ímpares.");
+				 break;
+			 }
+			 
+			if (Integer.valueOf(resposta) > Sorteio) {
+				
+				JOptionPane.showMessageDialog(null,"Errado!\nO número é menor.");
+				count++;
+				
+			} else if (Integer.valueOf(resposta) < Sorteio) {
+				
+				JOptionPane.showMessageDialog(null,"Errado!\nO número é maior.");
+				count++;
+				
+			} else {
+
+				count++;
+				JOptionPane.showMessageDialog(null,"Parabéns\nVocê acertou!\n" + "Você efetuou " + count + " tentativas para acertar!");
+				break;
+
+			}
+
+		}
+
+	}
+
+}
