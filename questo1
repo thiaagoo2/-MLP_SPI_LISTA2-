@@ -1,0 +1,14 @@
+
+public final class ConexaoDeBancoDados {
+
+	private static final ConexaoDeBancoDados INSTANCE = new ConexaoDeBancoDados();
+	
+	public static ConexaoDeBancoDados getInstance(){
+		return INSTANCE;
+	}
+	public void dataDaConexao(String dataConexao){
+		
+	}
+	
+	protected void finalize(){}
+}
