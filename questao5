@@ -1,0 +1,43 @@
+
+public class Fibonacci {
+
+	private static int prim;
+	private static int ant;
+	
+	public int getPrim() {
+		return prim;
+	}
+	public void setPrim(int prim) {
+		this.prim = prim;
+	}
+	public int getAnt() {
+		return ant;
+	}
+	public void setAnt(int ant) {
+		this.ant = ant;
+	}
+	
+	public static int fibo(int n){
+		prim = 0;
+		ant = 1;
+		
+	for (int i = 1; i <= n; i++) {
+		if (i == 1) {
+			prim = 1;
+			ant = 0;
+		} else {
+			prim += ant;
+			ant = prim - ant;
+		}
+	}
+		return prim;	
+	}
+	public static void main(String[] args) {
+		
+		for (int i = 0; i < 15; i++) {
+			System.out.print("(" + i + "):" + Fibonacci.fibo(i) + "\t");
+		}
+	}
+}
+
+	
